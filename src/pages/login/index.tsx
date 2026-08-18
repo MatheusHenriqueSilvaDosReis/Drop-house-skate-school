@@ -5,7 +5,6 @@ import {
     View,
     Image,
     TextInput,
-    
 } from 'react-native';
 
 import { styles } from './style';
@@ -18,26 +17,27 @@ export default function Login() {
             <View style={styles.logo}>
                 <Image
                     source={logo}
-                    style={{ width:100, height:90}}
+                    style={{ width:200, height:200}}
                     resizeMode="contain"
                 />
                 <Text style={styles.logoText}>SEJA BEM VINDO A NOSSA SKATE-SCHOOL</Text>
             </View>
 
             <View style ={styles.email}>
-                <Text>endereço de email</Text>
-                <TextInput placeholder="exemplo@dominio.com"/>
+                <Text style={styles.text}>endereço de email</Text>
+                <TextInput style={styles.pdt}placeholder="exemplo@dominio.com"/>
             </View>
             
             <View style={styles.senha}>
-                <Text>Senha</Text>
+                <Text style={styles.text}>Senha</Text>
+                <TextInput style={styles.pdt}placeholder="insira uma senha valida"/>
             </View>
             
             <View style={styles.login}>
-                <Text>botao</Text>
+                <button style={styles.BL} >LOGIN</button>
             </View>
         
-      
+          
         </View>
   );
 }
