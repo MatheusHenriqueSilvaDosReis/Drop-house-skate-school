@@ -5,11 +5,15 @@ import {
     View,
     Image,
     TextInput,
-    
+    Pressable,
+    StyleSheet,
 } from 'react-native';
 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Fontisto } from '@expo/vector-icons';
 import { styles } from './style';
 import logo from '../../assets/logo.png'
+import { fazerLogin } from './function';
 
 export default function Login() {
   return (
@@ -18,26 +22,46 @@ export default function Login() {
             <View style={styles.logo}>
                 <Image
                     source={logo}
-                    style={{ width:100, height:90}}
+                    style={{ width:200, height:200}}
                     resizeMode="contain"
                 />
                 <Text style={styles.logoText}>SEJA BEM VINDO A NOSSA SKATE-SCHOOL</Text>
             </View>
 
             <View style ={styles.email}>
-                <Text>endereço de email</Text>
-                <TextInput placeholder="exemplo@dominio.com"/>
+                <Text style={styles.text}>email</Text>
+                    
+                    <View style={styles.iconstyle}>
+                        <TextInput style={styles.pdt}placeholder="exemplo@dominio.com"/> <Fontisto name="email" size={24} color="white" />
+                    </View>
+
+                    
             </View>
             
             <View style={styles.senha}>
-                <Text>Senha</Text>
+                <Text style={styles.text}>Senha</Text>
+
+                    <View style={styles.iconstyle}>
+                        <TextInput style={styles.pdt}placeholder="insira uma senha valida" secureTextEntry={true}/> <Fontisto name="eye" size={24} color="white" />
+                    </View>
+
             </View>
             
-            <View style={styles.login}>
-                <Text>botao</Text>
+            <View style={styles.BL}>
+               <Pressable onPress={fazerLogin}>
+                    <Text style={styles.BL}>Login</Text>
+                </Pressable>
+                
             </View>
+
+            <view style={styles.cadastro}>
+                <Text style={styles.text}>Não possui uma conta?</Text>
+                <Pressable onPress={fazerLogin}>
+                    <Text style={styles.BC}>CADASTRE-SE</Text>
+                </Pressable>
+            </view>
         
-      
+          
         </View>
   );
 }
