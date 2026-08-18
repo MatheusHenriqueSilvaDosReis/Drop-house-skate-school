@@ -45,6 +45,7 @@ export const styles = StyleSheet.create({
         width: '75%',
         height: Dimensions.get('window').height / 4,
         color: 'white',
+        
     },
 
     logoText:{
